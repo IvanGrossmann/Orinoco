@@ -1,0 +1,247 @@
+/* mise en forme du corps de la page */
+html 
+{
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+body 
+{
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F3E9F1;
+  margin: 0;
+}
+/*Partie header*/
+header
+{
+  font-size: 14px;
+}
+#navbar 
+{
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: #1d1d1d;
+  opacity: 0.9;
+  margin: 0;
+}
+#navigation
+{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+h1, a, .panier
+{
+  text-decoration:none;
+  color: #f5f5f7;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.panier
+{
+  background-color: #1d1d1d;
+  border-style: none;
+}
+h2
+{
+  color: #f5f5f7;
+  text-shadow: 1px 1px 2px black;
+}
+
+/*body index*/
+#main
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #F3E9F1;
+}
+
+h3
+{
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 50px;
+  text-decoration: underline;
+}
+
+h4
+{
+  color: red;
+}
+
+a.btn
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1em;
+  color: #f5f5f7;
+  background-color: #1d1d1d;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  max-width: 200px;
+  text-align:center;
+  vertical-align:middle;
+}
+  
+  
+  .btn:hover {
+  padding: 10px;
+  background-color: black;
+}
+
+img
+{
+  margin-top: 30px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*fin body index*/
+
+/*body produit*/
+
+.suiteBouton
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-liste, .btn-panier, #stockage
+{
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  max-width: 200px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+.btn-liste
+{
+  color: #f5f5f7;
+  background-color: #1d1d1d;
+}
+
+.btn-liste:hover {
+  padding: 10px;
+  background-color: black;
+}
+.btn-panier
+{
+  color: #f5f5f7;
+  background-color: brown;
+}
+.btn-panier:hover{
+  padding: 10px;
+  background-color:red;
+}
+#stockage
+{
+  color: #f5f5f7;
+  background-color: #2E7E32;
+}
+
+#stockage:hover {
+  padding: 10px;
+  background-color: #088000;
+}
+/*fin body produit*/
+
+/*body panier*/
+table {
+  table-layout: fixed;
+  width: auto;
+  border-collapse: collapse;
+  border: 3px solid #1d1d1d;
+  margin-top: 2rem;
+}
+
+th, td {
+  padding: 20px;
+  border-collapse: collapse;
+  border: 3px solid #1d1d1d;
+}
+
+th{
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#prixTotal{
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+#ligne1 , #ligne2, #ligne3{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+#preformulaire{
+  display: flex;
+  justify-content: center;
+}
+#formulaire{
+  text-align: center;
+}
+h5{
+  margin-top: 60px;
+  font-size: 25px;
+}
+.commande{
+  margin-bottom: 10px;
+}
+/*fin body panier*/
+
+/*footer*/
+footer
+{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #1d1d1d;
+}
+#social
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0px;
+  margin-bottom: 30px;
+}
+.icon-md
+{
+  width: 100px;
+  font-size: 30px;
+  color:#f5f5f7;
+}
+#imageMarquePro
+{
+  margin-top: 100px;
+  color:#f5f5f7;
+} 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Orinoco</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/605b623e9f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+          <a href="index.html">
+            <h1><i class="fas fa-shopping-cart"></i> Orinoco</h1>
+          </a>
+          <ul id="navigation">
+            <li>
+              <a href="index.html">Accueil</a>
+            </li>
+            <li>
+                <button class="panier" onclick='location.href="panier.html"' data-target="panier">Panier</button>
+            </li>
+          </ul>
+        </nav>
+    </header>
+    <section id="main">
+        <h5>Votre Panier</h5>
+        <section id="tableauPanier">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Vernis</th>
+                        <th>Description</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="afficheProduitPanier">
+                    <!-- Partie panier pour l'affichage -->
+                </tbody>
+            </table>
+            <div id="affichageTotal">
+
+            </div>
+        </section>
+        <section id="preformulaire">
+            <form id="formulaire">
+                <div id="ligne1">
+                    <div class="form">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text"name= "prenom" id="prenom" placeholder="Ton prénom..."required>
+                    </div>
+                    <div class="form">
+                        <label for="nom">Nom :</label>
+                        <input type="text" name="nom" id="nom" placeholder="Ton nom..."required>
+                    </div>
+                </div>
+                <div id="ligne2">
+                    <div class="form">
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email" placeholder="Ton Email..."required>
+                    </div>
+                    <div class="form">
+                        <label for="adresse">Adresse :</label>
+                        <input type="text" name="adresse" id="adresse" placeholder="23 rue du conquet"required>
+                    </div>
+                </div>
+                <div  id="ligne3">
+                    <div class="form">
+                        <label for="ville">Ville :</label>
+                        <input type="text" name="ville" id="ville" placeholder="Ta ville..."required>
+                    </div>
+                </div>
+                
+
+                
+                <button type="button" class="commande">Valider ma commande</button>
+                
+            </form>
+
+        </section>
+    </section>
+    <footer>
+        <div >
+            <div>
+                <div>
+                    <p id="imageMarquePro">
+                        Orinoco | Professionnel du meuble en bois                              
+                    </p>
+                    <div id="social">
+                        <div>
+                            <div>
+                                <a title="Twitter" href="index.html"><span class="fa fa-twitter icon-md"></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a title="Facebook" href="index.html"><span class="fa fa-facebook icon-md"></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a title="Dribble" href="index.html"><span class="fa fa-dribbble icon-md"></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a title="Instagram" href="index.html"><span class="fa fa-instagram icon-md"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="js/panier.js"></script>
+</body>
+</html> 
