@@ -8,7 +8,7 @@ function affichagePanier() {
 
     let tableauPanier = document.getElementById("afficheProduitPanier")
     
-    // affichage du prix total du panier si le panier contient quelque chose...Sinon on affiche "votre panier est vide"
+    // affichage du prix total du panier si le panier
     if (prixTotal != null) {
         prixPanier.textContent = 'Le montant de votre commande est de : ' + prixTotal +  ' €';
         prixPanier.id = 'prixTotal'; 
@@ -24,6 +24,7 @@ function affichagePanier() {
         var div = document.createElement("div")
         div.textContent = "Le panier est vide!"
         afficheProduitPanier.appendChild(div)
+        console.log("Le panier est vide!!!!")
     } else {
         //s'il y a qq chose, creer un tableau avec chaque article
         tableauPanier.innerHTML = ''
@@ -50,51 +51,34 @@ function affichagePanier() {
                 var prix = document.createElement("td")
                 prix.textContent = furniture.price  + "€"
                 tr.appendChild(prix)
-    
+
+              console.log("Voici le panier :")
+              console.log(panier)
         })
     }
 }
 affichagePanier()  
 
-// validation
 
-const prenom = document.getElementById('prenom')
-const nom = document.getElementById('nom')
-const email = document.getElementById('email')
-const adresse = document.getElementById('adresse')
-const ville = document.getElementById('ville')
 
-//console.log(prenom, nom, email, adresse, ville)
-// prenom
-prenom.addEventListener('input', ({ target: { value } }) => {   
-})
-// nom
-nom.addEventListener('input', ({ target: { value } }) => {
-})
+
+
 // email
 email.addEventListener('input', ({ target: { value } }) => {
-    if(value.length === 0)
+  if(value.length === 0)
     email.style.borderColor = "black"
     else if(!value.includes('@'))
     email.style.borderColor = "red"
     else
     email.style.borderColor = "green"
 })
-// adresse
-adresse.addEventListener('input', ({ target: { value } }) => {
-})
-// ville
-ville.addEventListener('input', ({ target: { value } }) => {
-})
-
-
 
 
 var formValid = document.querySelector('.commande');
-formValid.addEventListener ('click', achat);
+formValid.addEventListener ('click', function (e) {achat(e)});
 
-function achat() {
-
+function achat(e) {
+  e.preventDefault();
 // integration d'une alerte si le panier est vide, on ne peut pas passer commande  
   let panier = sessionStorage.getItem('panier');
   panier = JSON.parse(panier);
@@ -131,6 +115,11 @@ if (panier == null || total == 0){
     let email = document.getElementById('email').value;
     let adresse = document.getElementById('adresse').value;
     let ville = document.getElementById('ville').value;
+   
+
+    
+    
+
 
   // on met les valeurs dans un objet pour la requete POST
   
@@ -149,11 +138,24 @@ if (panier == null || total == 0){
   };
 
   let achat = JSON.stringify(objet);
+  if (prenom == ''){
+    alert("Prénom incorrect")
+
+  } else if (nom == ''){
+    alert("Nom incorrect")
+  } else if (email == ''){
+    alert("Email incorrect")
+  } else if (adresse == ''){
+    alert("Adresse incorrect")
+  } else if (ville == ''){
+    alert("Ville incorrect")
+   
  // console.log(achat);
  // console.log(products);
   
   
   // si tout à été bien rempli, on envoi la commande au serveur, avec toutes les coordonnées du client
+  } else {
   let request = new XMLHttpRequest();
        request.onreadystatechange = function () {
          if (this.readyState == XMLHttpRequest.DONE) {
@@ -166,10 +168,11 @@ if (panier == null || total == 0){
            //Des que la requete est envoyé, on bascule sur la page de confirmation de commande avec toutes les infos demandé : Id de commande, prix du panier
            window.location.href = "commande.html";
          }
-       };
-  request.open("post", "http://localhost:3000/api/teddies/order");
+       }
+  request.open("post", "http://localhost:3000/api/furniture/order");
   request.setRequestHeader("Content-Type", "application/json");
   request.send(achat);
+      }
 } 
 
 

@@ -5,6 +5,7 @@ const url = "http://localhost:3000/api/furniture"
 fetch(url)
     .then(resultat => resultat.json())
     .then(json =>{
+        console.log("En dessous, les produits (Il doit en avoir 5)")
         console.log(json)
         json.forEach(({_id, name, description, price, imageUrl}) =>{
             const div = document.createElement("div")
@@ -20,6 +21,7 @@ fetch(url)
             const nodeDescription = document.createTextNode (description)
             img.src = imageUrl
             lien.href = 'produit.html?id=' + _id;
+            lien.textContent = "voir le produit"
 
 
             main.appendChild (div)
@@ -38,6 +40,7 @@ fetch(url)
         })
     })
     .catch(err =>{
+        alert("Le serveur ne répond pas !");
         console.error(err)
 })
 
